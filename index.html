@@ -2,27 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estacionamento ifPark</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estacionamento IfPark</title>
+    <link rel="stylesheet" href="style.css">  
 </head>
 <body>
     <div>
-        <input type="text" id="Nome" placeholder="Digite o nome do veículo">
-        <input type="text" id="licença" placeholder="Digite a placa do veículo">
-        <button id="enviar">Registrar</button>
+        <input type="text" id="name" placeholder="Nome do veículo" autocomplete="off">
+        <input type="text" id="licence" placeholder="Placa do veículo" autocomplete="off">
+        <button id="send" class="success">Registrar</button>
     </div>
     <table>
         <thead>
             <tr>
                 <th>Veículo</th>
                 <th>Placa</th>
-                <th>Horario</th>
-                <th>ações</th>
+                <th>Entrada</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody id="garage"></tbody>
     </table>
-    
 </body>
+
+<script src="main.js"></script>
 </html>
