@@ -35,7 +35,7 @@ function renderGarage () {
     $("#garage").appendChild(row);
 };
 
-
+//evento de chegar as info do local storage
    function checkOut(info) {
         let period = new Date() - new Date(info[2].dataset.time);
         period = convertPeriod(period);
@@ -80,8 +80,11 @@ $("#send").addEventListener("click", e => {
 //limpar os dados passados e deixar os novos
     $("#name").value = "";
     $("#licence").value = "";
-
-
+    });
+//evento de deletar carro
+    $("#garage").addEventListener("click", (e) => {
+        if(e.target.className === "delete")
+            checkOut(e.target.parentElement.parentElement.cells);
     });
 })();
 
