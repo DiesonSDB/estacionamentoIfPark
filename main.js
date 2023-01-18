@@ -28,7 +28,7 @@ function renderGarage () {
             })}
         </td>
         <td>
-            <button class="delete">x</button>
+            <button class="delete">X</button>
         </td>
     `;
 

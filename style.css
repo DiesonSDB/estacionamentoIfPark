@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 h1 {
     font-size: 48px;
     color: rgb(54, 80, 231);
-    display: flex;
     text-align: center;
     }
 * {
@@ -11,13 +12,15 @@ h1 {
 }
 
 body {
-    width: 50%;
+    /*width: 50%;*/
     margin: 2rem auto;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
 }
 
 div {
-    display: grid;
-    grid-template-columns: 1fr;
+    /*display: grid;
+    grid-template-columns: 1fr;*/
     background-color: #eee;
     padding: 0.7rem;
 }
@@ -39,23 +42,41 @@ button {
 .success {
     background-color: rgb(54, 80, 231);
     color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: medium;
 }
 
 .delete {
     background-color: rgb(231, 54, 54);
     color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: medium;
 }
-
+.options{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-around;
+    margin: 0 auto;
+}
 
 table {
     background-color: #eee;
     margin-top: .9rem;
     border-collapse: collapse;
-    width: 100%;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 th, td {
     padding: 5px 25px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 400px){
+    .options{
+        width: 80%;
+    }
 }
