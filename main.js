@@ -1,7 +1,20 @@
-//bloqueio de de acesso pelo console  28:55
+//bloqueio de de acesso pelo console
 (function () {
 // trocando o querySelector por $
   const $ = q => document.querySelector(q)
+
+  function convertPeriod(mil) {
+    var min = Math.floor(mil / 60000);
+    var sec = Math.floor((mil % 60000) / 1000);
+    return `${min}m e ${sec}s`;
+};
+
+function renderGarage () {
+    const garage = getGarage();
+    $("#garage").innerHTML = "";
+    garage.forEach(c => addCarToGarage(c))
+};
+  
 //armazenar e apagar carro
   function addCarToGarage (car) {
     const row = document.createElement("tr");
@@ -21,6 +34,28 @@
 
     $("#garage").appendChild(row);
 };
+
+
+   function checkOut(info) {
+        let period = new Date() - new Date(info[2].dataset.time);
+        period = convertPeriod(period);
+
+        const licence = info[1].textContent;
+        const msg = `O veículo ${info[0].textContent} de placa ${licence} permaneceu ${period} estacionado. \n\n Deseja encerrar?`;
+
+        if(!confirm(msg)) return;
+        
+        const garage = getGarage().filter(c => c.licence !== licence);
+        localStorage.garage = JSON.stringify(garage);
+        
+        renderGarage();
+    };
+
+    const getGarage = () => localStorage.garage ? JSON.parse(localStorage.garage) : [];
+
+    renderGarage();
+
+
 
 //botão de regstro
 $("#send").addEventListener("click", e => {
